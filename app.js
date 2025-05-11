@@ -15,6 +15,10 @@ connectDB();
 app.use(cors());
 app.use(express.json());
 
+app.get("/api", (req,res) => {
+    res.send("Server is live")
+})
+
 app.use("/api/employees", employeeRoutes);
 app.use("/api/locations", locationRoutes);
 app.use("/api/attendance", attendanceRoutes);
