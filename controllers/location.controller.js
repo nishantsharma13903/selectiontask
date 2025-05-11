@@ -60,7 +60,7 @@ exports.getByEmployee = async (req, res) => {
     res.send({
       statusCode: 500,
       success: false,
-      message: 'Error fetching location',
+      message: err.message || 'Error fetching location',
       result: err
     });
   }
