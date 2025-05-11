@@ -48,7 +48,7 @@ exports.create = async (req, res) => {
 
 exports.getByEmployee = async (req, res) => {
   try {
-   const locations = await Location.find({});
+   const locations = await Location.findAll({});
 
    return res.send({
     statusCode : 200,
