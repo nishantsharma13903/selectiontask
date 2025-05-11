@@ -66,9 +66,9 @@ exports.getByEmployee = async (req, res) => {
       result: {
         _id: data[0]._id,
         employeeId: data[0].employeeId,
-        latitude: data[0].latitude,
-        longitude: data[0].longitude,
-        timestamp: data[0].timestamp
+        latitude: data[0].latitude || 0,
+        longitude: data[0].longitude || 0,
+        timestamp: data[0].timestamp || ""
       }
     });
   } catch (err) {
