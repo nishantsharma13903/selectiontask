@@ -65,13 +65,7 @@ exports.getByEmployee = async (req, res) => {
       statusCode: 200,
       success: true,
       message: 'Latest location',
-      result: {
-        _id: data[0]._id,
-        employeeId: data[0].employeeId,
-        latitude: data[0].latitude || 0,
-        longitude: data[0].longitude || 0,
-        timestamp: data[0].timestamp || ""
-      }
+      result:data
     });
   } catch (err) {
     res.send({
