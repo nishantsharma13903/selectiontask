@@ -48,15 +48,17 @@ exports.create = async (req, res) => {
 
 exports.getByEmployee = async (req, res) => {
   try {
-    const data = await Location.find({ employeeId: req.params.id })
+    const data = await Location.find({ employeeId: req.body.id })
       .sort({ timestamp: -1 })
       .limit(1);
+
+      console.log("Data", data);
     if (data.length === 0) {
       return res.send({
         statusCode: 404,
         success: false,
         message: 'No location found',
-        result: null
+        result: {}
       });
     }
     res.send({
