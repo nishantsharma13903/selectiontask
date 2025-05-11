@@ -12,7 +12,14 @@ require("dotenv").config();
 const app = express();
 connectDB();
 
-app.use(cors());
+const corsOptions = {
+  origin: "*",
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  preflightContinue: true,
+  optionsSuccessStatus: 204, // some legacy browsers (IE11, various SmartTVs) choke on 204
+}
+
+app.use(cors(corsOptions));
 app.use(express.json());
 
 app.get("/api", (req,res) => {
