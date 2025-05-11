@@ -54,7 +54,7 @@ exports.getByEmployee = async (req, res) => {
     statusCode : 200,
     message : "Fetched successfully",
     success : true,
-    reesult : locations
+    result : locations
    })
   } catch (err) {
     res.send({
